@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/01 02:00:16 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/01 02:14:12 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,21 @@ int main(int ac, char **av)
 {
 	int		i;
 	t_list	*head;
+	int		size;
 
 	head = NULL;
 	if (ac > 1)
 	{
+		size = 0;
 		i = 1;
 		while (av[i])
 		{
 			ft_all_is_good(av[i]);
 			ft_lstadd_back(&head, ft_lstnew(av[i]));
 			i++;
+			size++;
 		}
-		sort_algorithm(head);
+		sort_algorithm(head, size);
 	}
 	else
 		ft_printf("Invalid number of argements\n");
