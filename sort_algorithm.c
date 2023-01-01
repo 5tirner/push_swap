@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 00:50:40 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/01 02:53:35 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/01 02:56:43 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	*stack_a_creation(t_list *head, int size)
 
 	save = head;
 	i = 0;
-	while (i < size - 1)
+	while (i < size)
 		i++;
 	arr = malloc(i * 4);
 	i = 0;
@@ -39,7 +39,7 @@ int	*stack_b_creation(int size)
 	int		i;
 
 	i = 0;
-	while (i < size - 1)
+	while (i < size)
 		i++;
 	arr = malloc(i * 4);
 	return (arr);
@@ -51,5 +51,11 @@ void	sort_algorithm(t_list *head, int size)
 	int	*stack_b;
 
 	stack_a = stack_a_creation(head, size);
+	int i = 0;
+	while (i < size)
+	{
+		printf("%d\n", stack_a[i]);
+		i++;
+	}
 	stack_b = stack_b_creation(size);
 }

@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/01 02:14:12 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/01 02:55:17 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int main(int ac, char **av)
 			i++;
 			size++;
 		}
+		printf("%d\n\n", size);
 		sort_algorithm(head, size);
 	}
 	else
