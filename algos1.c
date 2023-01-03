@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:36:07 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/01 02:49:45 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/03 03:18:36 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,42 +28,49 @@ void	swap_a_algo(int	*stack_a, int size)
 	}
 }
 
-void	swap_b_algo(int *stack_b, int size)
+t_list	*rotate_a_algo(t_list *head)
 {
-	int	i;
-	int swap;
+	t_list	*ptr;
+	int		i;
 
 	i = 0;
-	if (size <= 1)
-		return ;
-	else
+	ptr = head;
+	ft_lstadd_back(&head, ft_lstnew(ptr->content));
+	while (head)
 	{
-		swap = stack_b[i];
-		stack_b[i] = stack_b[i + 1];
-		stack_b[i + 1] = swap;
+		if (i == 0)
+		{
+			free(head);
+			head = head->next;
+		}
+		printf("%s\n", head->content);
+		head = head->next;
+		i++;
 	}
+	return 0;
 }
-
-void	swap_a_and_b_algo(int *stack_a, int *stack_b, int size_a, int size_b)
+t_list	*rev_rotate_a_algo(t_list *head)
 {
-	int	i;
-	int swap;
+	t_list	*ptr;
+	t_list	*save;
 
-	i = 0;
-	if (size_a <= 1)
-		return ;
-	else
+	ptr = NULL;
+	save = head;
+	while (head)
 	{
-		swap = stack_a[i];
-		stack_a[i] = stack_a[i + 1];
-		stack_a[i + 1] = swap;
+		ptr = head;
+		head = head->next;
 	}
-	if (size_b <= 1)
-		return ;
-	else
+	ft_lstadd_front(&save, ft_lstnew(ptr->content));
+	while (save)
 	{
-		swap = stack_b[i];
-		stack_b[i] = stack_b[i + 1];
-		stack_b[i + 1] = swap;
+		printf("%s\n", save->content);
+		save = save->next;
+		if (save->next == NULL)
+		{
+			free(save);
+			break;
+		}
 	}
+	return (save);
 }

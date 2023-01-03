@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/14 13:52:10 by zasabri           #+#    #+#              #
-#    Updated: 2023/01/01 00:34:59 by zasabri          ###   ########.fr        #
+#    Updated: 2023/01/03 02:50:22 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,10 +47,10 @@ SRCS 	= ft_isalpha.c\
 		ft_lstadd_back.c\
 		ft_lstnew.c\
 		ft_lstlast.c\
+		ft_lstadd_front.c\
+		ft_lstdelone.c\
 		
 BONUS	= ft_lstsize_bonus.c\
-		ft_lstadd_front_bonus.c\
-		ft_lstdelone_bonus.c\
 
 CC		= cc
 
