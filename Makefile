@@ -6,15 +6,14 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/01/03 03:00:22 by zasabri          ###   ########.fr        #
+#    Updated: 2023/01/03 03:51:00 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC		= push_swap.c\
 		algos1.c\
-		./libft/ft_atoi.c\
-		./libft/ft_itoa.c\
 		./libft/ft_lstadd_back.c\
+		./libft/ft_atoi.c\
 		./libft/ft_strdup.c\
 		./libft/ft_lstlast.c\
 		./libft/ft_lstnew.c\
@@ -31,8 +30,10 @@ SRC		= push_swap.c\
 		./ft_printf/ft_string.c\
 		./ft_printf/ft_unsigned.c\
 		./ft_printf/ft_utoa.c\
+		./ft_printf/ft_itoa.c\
 		sort_algorithm.c\
 		./libft/ft_lstadd_front.c\
+		./libft/ft_strncmp.c\
 
 OBJS	= $(SRC:.c=.o)
 

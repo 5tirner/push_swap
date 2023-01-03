@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_bonus.c                                    :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zasabri <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:30:39 by zasabri           #+#    #+#             */
-/*   Updated: 2022/10/26 21:47:14 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/03 03:39:41 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	ft_sign(const char *str)
 	return (sign);
 }
 
-int	ft_check_over(int sign)
+static int	ft_check_over(int sign)
 {
 	if (sign > 0)
 		return (-1);

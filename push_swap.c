@@ -6,11 +6,75 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/03 03:14:40 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/03 04:02:35 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_sign(const char *str)
+{
+	int	sign;
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] == '+' || str[i] == '-')
+		{
+			if (str[i] == '+' && (str[i + 1] >= '0' && str[i + 1] <= '9'))
+				sign = 1;
+			else if (str[i] == '-' && (str[i + 1] >= '0' && str[i + 1] <= '9'))
+				sign = -1;
+			else
+			{
+				ft_printf("Error\n");
+				exit(1);
+			}
+			i++;
+		}
+		i++;
+	}
+	return (sign);
+}
+
+int	ft_check_over(int sign)
+{
+	sign = 0;
+	ft_printf("Error\n");
+	exit(1);
+}
+
+int	ft_int(const char *str)
+{
+	int		i;
+	int		sign;
+	int		res;
+	int		t;
+
+	i = 0;
+	sign = 1;
+	res = 0;
+	if (ft_strncmp(str,"-2147483648", 11) == 0)
+		return (-2147483648);
+	while (((str[i] >= 9 && str[i] <= 13) || (str[i] == 32)))
+		i++;
+	while (str[i] == '+' || str[i] == '-')
+	{
+		sign = ft_sign(str);
+		i++;
+	}
+	while ((str[i] >= '0' && str[i] <= '9'))
+	{
+		t = res * 10 + str[i] - 48;
+		if (t < res)
+			return (ft_check_over(sign));
+		res = t;
+		i++;
+	}
+	return (res * sign);
+}
+
 void    ft_all_is_good(char *av)
 {
 	int i;
@@ -19,7 +83,8 @@ void    ft_all_is_good(char *av)
 	while (av[i])
 	{
 		if ((av[i] < '0' || av[i] > '9')
-			&& (av[i] != '-' && av[i] != '+'))
+			&& (av[i] != '-' && av[i] != '+') && (av[i] != ' ')
+			&& (av[i] != 34))
 		{
 			ft_printf("Error\n");
 			ft_printf("Probleme with this argement: %s\n", av);
@@ -44,8 +109,11 @@ int main(int ac, char **av)
 		{
 			ft_all_is_good(av[i]);
 			if (!av[i][0])
-				i+=1;
-			ft_lstadd_back(&head, ft_lstnew(ft_strdup(ft_itoa(ft_atoi(av[i])))));
+			{
+				ft_printf("Error\n");
+				exit(1);
+			}
+			ft_lstadd_back(&head, ft_lstnew(ft_strdup(ft_itoa(ft_int(av[i])))));
 			i++;
 			size++;
 		}
