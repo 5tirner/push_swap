@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 18:40:08 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/19 18:40:29 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/19 18:57:10 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	if_already_sort(t_list *head)
 {
-	int i;
-	int l = ft_lstsize(head);
-	int	arr[l];
-	int	t;
+	int	i;
+	int	l;
+	int	*arr;
 
 	i = 0;
-	t = 0;
+	l = ft_lstsize(head);
+	arr = malloc(4 * l);
 	while (head)
 	{
 		arr[i] = head->content;
@@ -31,12 +31,10 @@ void	if_already_sort(t_list *head)
 	while (i < l - 1)
 	{
 		if (arr[i] > arr[i + 1])
-		{
-			t = 1;
-			break;
-		}
+			break ;
 		i++;
 	}
-	if (t == 0)
+	free(arr);
+	if (i + 1 == l)
 		exit(0);
 }
