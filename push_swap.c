@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/19 15:52:03 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/19 17:13:09 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,9 @@ int main(int ac, char **av)
 {
 	int		i;
 	t_list	*head;
+	char	**str;
 	int		size;
+	int		j;
 
 	head = NULL;
 	if (ac > 1)
@@ -113,7 +115,13 @@ int main(int ac, char **av)
 				ft_printf("Error\n");
 				exit(1);
 			}
-			ft_lstadd_back(&head, ft_lstnew(ft_itoa(ft_int(av[i]))));
+			j = 0;
+			str = ft_split(av[i], ' ');
+			while (str[j])
+			{
+				ft_lstadd_back(&head, ft_lstnew(ft_int(str[j])));
+				j++;
+			}
 			i++;
 			size++;
 		}
@@ -124,7 +132,7 @@ int main(int ac, char **av)
 		rev_rotate_algo(&head);
 		while (head)
 		{
-			printf("%s -> %p\n", head->content, head->content);
+			printf("%d -> %p\n", head->content, &head->content);
 			head = head->next;
 		}
 	}

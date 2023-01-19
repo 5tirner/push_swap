@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:36:07 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/19 15:58:27 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/19 17:38:28 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,11 @@ void	rev_rotate_algo(t_list **head)
 	ptr = *head;
 	while (ptr->next)
 		ptr = ptr->next;
-	ft_lstadd_front(head, ft_lstnew(ptr->content));
+	save = ft_lstnew(ptr->content);
+	while ((*head)->next)
+	{
+		ft_lstadd_back(&save, ft_lstnew((*head)->content));
+		*head = (*head)->next;
+	}
+	(*head) = save;
 }

@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/01/19 13:50:04 by zasabri          ###   ########.fr        #
+#    Updated: 2023/01/19 17:13:47 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ SRC		= push_swap.c\
 		./libft/ft_lstadd_front.c\
 		./libft/ft_strncmp.c\
 		./libft/ft_lstsize.c\
-		./libft/ft_lstdelone.c\
+		./libft/ft_split.c\
+		./libft/ft_calloc.c\
+		./libft/ft_bzero.c\
 
 OBJS	= $(SRC:.c=.o)
 
