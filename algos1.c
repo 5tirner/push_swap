@@ -6,20 +6,20 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:36:07 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/19 17:38:28 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/19 17:44:51 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap_a_algo(t_list **head)
+void	swap_a_algo(t_list **head)
 {
-	t_list *swap;
-	
+	t_list	*swap;
+
 	if (ft_lstsize(*head) <= 1)
 		return ;
 	swap = *head;
-	*head = (*head)->next;//Dereference
+	*head = (*head)->next;
 	swap->next = (*head)->next;
 	(*head)->next = swap;
 }
@@ -39,7 +39,7 @@ void	rev_rotate_algo(t_list **head)
 {
 	t_list	*ptr;
 	t_list	*save;
-	
+
 	if (ft_lstsize(*head) <= 1)
 		return ;
 	ptr = *head;

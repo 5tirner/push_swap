@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/19 17:13:09 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/19 18:41:47 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,8 @@ int	ft_int(const char *str)
 	i = 0;
 	sign = 1;
 	res = 0;
-	if (ft_strncmp(str,"-2147483648", 11) == 0)
+	if (ft_strncmp(str, "-2147483648", 11) == 0)
 		return (-2147483648);
-	while (((str[i] >= 9 && str[i] <= 13) || (str[i] == 32)))
-		i++;
 	while (str[i] == '+' || str[i] == '-')
 	{
 		sign = ft_sign(str);
@@ -75,11 +73,18 @@ int	ft_int(const char *str)
 	return (res * sign);
 }
 
-void    ft_all_is_good(char *av)
+void	ft_all_is_good(int ac, char *av)
 {
-	int i;
+	int	i;
 
 	i = 0;
+	if (ac <= 2)
+		exit(0);
+	if (!av[0])
+	{
+		printf("Error\n");
+		exit(1);
+	}
 	while (av[i])
 	{
 		if ((av[i] < '0' || av[i] > '9')
@@ -94,48 +99,34 @@ void    ft_all_is_good(char *av)
 	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	int		i;
 	t_list	*head;
+	t_list	*head2;
 	char	**str;
-	int		size;
 	int		j;
 
 	head = NULL;
-	if (ac > 1)
+	head2 = NULL;
+	i = 1;
+	while (av[i])
 	{
-		size = 0;
-		i = 1;
-		while (av[i])
+		ft_all_is_good(ac, av[i]);
+		j = 0;
+		str = ft_split(av[i], ' ');
+		while (str[j])
 		{
-			ft_all_is_good(av[i]);
-			if (!av[i][0])
-			{
-				ft_printf("Error\n");
-				exit(1);
-			}
-			j = 0;
-			str = ft_split(av[i], ' ');
-			while (str[j])
-			{
-				ft_lstadd_back(&head, ft_lstnew(ft_int(str[j])));
-				j++;
-			}
-			i++;
-			size++;
+			ft_lstadd_back(&head, ft_lstnew(ft_int(str[j])));
+			j++;
 		}
-		//swap_a_algo(&head);
-		// printf("------\n");
-		//rotate_algo(&head);
-		// printf("--------\n");
-		rev_rotate_algo(&head);
-		while (head)
-		{
-			printf("%d -> %p\n", head->content, &head->content);
-			head = head->next;
-		}
+		i++;
 	}
-	else
-		ft_printf("Invalid number of argements\n");
+	if_already_sort(head);
+	rev_rotate_algo(&head);
+	while (head)
+	{
+		printf("%d\n", head->content);
+		head = head->next;
+	}
 }
