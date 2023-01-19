@@ -1,5 +1,0 @@
-Here, 'a' is a pointer to an integer and 'b' is a pointer to a pointer to an integer.
-
-Another way to think about it is that a pointer to a pointer can be used to indirectly access the value that a pointer points to. This can be useful for situations such as when you want to pass a pointer to a function by reference so that it can modify the value that the pointer points to, rather than just a copy of the pointer.
-
-In short, a pointer to a pointer is a way to store the memory address of another pointer, and allow you to indirectly access the value that the pointer points to.
