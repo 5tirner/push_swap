@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/19 18:41:47 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/19 19:41:05 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,21 @@ int	main(int ac, char **av)
 		i++;
 	}
 	if_already_sort(head);
-	rev_rotate_algo(&head);
+	push_b_algo(&head, &head2);
+	push_b_algo(&head, &head2);
+	push_b_algo(&head, &head2);
+	push_b_algo(&head, &head2);
+	push_b_algo(&head, &head2);
+	push_b_algo(&head, &head2);
+	printf("--\n");
+	push_a_algo(&head, &head2);
+	push_a_algo(&head, &head2);
+	while (head2)
+	{
+		printf("%d\n", head2->content);
+		head2 = head2->next;
+	}
+	printf("-----------\n");
 	while (head)
 	{
 		printf("%d\n", head->content);

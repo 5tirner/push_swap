@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:36:07 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/19 17:44:51 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/19 19:35:43 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	swap_a_algo(t_list **head)
 	*head = (*head)->next;
 	swap->next = (*head)->next;
 	(*head)->next = swap;
+	ft_printf("->sa\n");
 }
 
 void	rotate_algo(t_list **head)
@@ -33,6 +34,7 @@ void	rotate_algo(t_list **head)
 	ptr = *head;
 	*head = (*head)->next;
 	ft_lstadd_back(head, ft_lstnew(ptr->content));
+	printf("->ra\n");
 }
 
 void	rev_rotate_algo(t_list **head)
@@ -52,4 +54,14 @@ void	rev_rotate_algo(t_list **head)
 		*head = (*head)->next;
 	}
 	(*head) = save;
+	ft_printf("->rra\n");
+}
+
+void	push_a_algo(t_list **head, t_list **head2)
+{
+	if (ft_lstsize(*head2) == 0)
+		return ;
+	ft_lstadd_front(head, ft_lstnew((*head2)->content));
+	*head2 = (*head2)->next;
+	ft_printf("pa\n");
 }

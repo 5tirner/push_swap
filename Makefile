@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/01/19 18:39:36 by zasabri          ###   ########.fr        #
+#    Updated: 2023/01/19 19:02:04 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRC		= push_swap.c\
 		./libft/ft_calloc.c\
 		./libft/ft_bzero.c\
 		if_already_sort.c\
+		algos2.c\
 
 OBJS	= $(SRC:.c=.o)
 
