@@ -10,9 +10,9 @@ rb (rotate b) : Top number in B goes to bottom of B
 
 rr : ra + rb
 
-rra (reverse rotate a) : Bottom number in A goes to top of A
+rra (reverse rotate a): Bottom number in A goes to top of A
 
-rra (reverse rotate b) : Bottom number in B goes to top of B
+rra (reverse rotate b): Bottom number in B goes to top of B
 
 rrr : rra + rrb
 

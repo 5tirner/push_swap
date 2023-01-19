@@ -6,71 +6,44 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:36:07 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/03 03:21:54 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/19 15:58:27 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_a_algo(int	*stack_a, int size)
+void swap_a_algo(t_list **head)
 {
-	int	i;
-	int swap;
-
-	i = 0;
-	if (size <= 1)
+	t_list *swap;
+	
+	if (ft_lstsize(*head) <= 1)
 		return ;
-	else
-	{
-		swap = stack_a[i];
-		stack_a[i] = stack_a[i + 1];
-		stack_a[i + 1] = swap;
-	}
+	swap = *head;
+	*head = (*head)->next;//Dereference
+	swap->next = (*head)->next;
+	(*head)->next = swap;
 }
 
-t_list	*rotate_a_algo(t_list *head)
+void	rotate_algo(t_list **head)
 {
 	t_list	*ptr;
-	int		i;
 
-	i = 0;
-	ptr = head;
-	ft_lstadd_back(&head, ft_lstnew(ptr->content));
-	while (head)
-	{
-		if (i == 0)
-		{
-			free(head);
-			head = head->next;
-		}
-		printf("%s\n", head->content);
-		head = head->next;
-		i++;
-	}
-	return 0;
+	if (ft_lstsize(*head) <= 1)
+		return ;
+	ptr = *head;
+	*head = (*head)->next;
+	ft_lstadd_back(head, ft_lstnew(ptr->content));
 }
-t_list	*rev_rotate_a_algo(t_list *head)
+
+void	rev_rotate_algo(t_list **head)
 {
 	t_list	*ptr;
 	t_list	*save;
-
-	ptr = NULL;
-	save = head;
-	while (head)
-	{
-		ptr = head;
-		head = head->next;
-	}
-	ft_lstadd_front(&save, ft_lstnew(ptr->content));
-	while (save)
-	{
-		printf("%s\n", save->content);
-		save = save->next;
-		if (save->next == NULL)
-		{
-			free(save);
-			break;
-		}
-	}
-	return (save);
+	
+	if (ft_lstsize(*head) <= 1)
+		return ;
+	ptr = *head;
+	while (ptr->next)
+		ptr = ptr->next;
+	ft_lstadd_front(head, ft_lstnew(ptr->content));
 }

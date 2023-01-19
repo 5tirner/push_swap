@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/03 04:02:35 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/19 15:52:03 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,12 +113,20 @@ int main(int ac, char **av)
 				ft_printf("Error\n");
 				exit(1);
 			}
-			ft_lstadd_back(&head, ft_lstnew(ft_strdup(ft_itoa(ft_int(av[i])))));
+			ft_lstadd_back(&head, ft_lstnew(ft_itoa(ft_int(av[i]))));
 			i++;
 			size++;
 		}
-		sort_algorithm(head, size);
-		rotate_a_algo(head);
+		//swap_a_algo(&head);
+		// printf("------\n");
+		//rotate_algo(&head);
+		// printf("--------\n");
+		rev_rotate_algo(&head);
+		while (head)
+		{
+			printf("%s -> %p\n", head->content, head->content);
+			head = head->next;
+		}
 	}
 	else
 		ft_printf("Invalid number of argements\n");
