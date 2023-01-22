@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/22 20:10:05 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/22 20:59:30 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,11 @@ int	ft_int(const char *str)
 	return (res * sign);
 }
 
-void	ft_all_is_good(int ac, char *av)
+void	ft_all_is_good(char *av)
 {
 	int	i;
 
 	i = 0;
-	if (ac <= 2)
-		exit(0);
 	if (!av[0])
 	{
 		printf("Error\n");
@@ -107,12 +105,14 @@ int	main(int ac, char **av)
 	char	**str;
 	int		j;
 
+	if (ac == 1)
+		return (0);
 	head = NULL;
 	head2 = NULL;
 	i = 1;
 	while (av[i])
 	{
-		ft_all_is_good(ac, av[i]);
+		ft_all_is_good(av[i]);
 		j = 0;
 		str = ft_split(av[i], ' ');
 		while (str[j])
@@ -123,16 +123,10 @@ int	main(int ac, char **av)
 		i++;
 	}
 	if_already_sort(head);
-	swap_five(&head, &head2);
+	sort_algorithm(&head, &head2);
 	while (head)
 	{
 		printf("%d\n", head->content);
-		head = head->next;
-	}
-	printf("////////\n");
-	while (head2)
-	{
-		printf("%d\n", head2->content);
-		head2 = head2->next;
+		head=head->next;
 	}
 }

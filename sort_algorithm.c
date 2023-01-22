@@ -6,36 +6,19 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 00:50:40 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/19 16:52:49 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/22 21:04:49 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int	*stack_a_creation(t_list *head, int size)
-// {
-// 	t_list	*save;
-// 	int		*arr;
-// 	int		i;
+void	sort_algorithm(t_list **head, t_list **head2)
+{
+	int	size;
 
-// 	save = head;
-// 	i = 0;
-// 	while (i < size)
-// 		i++;
-// 	arr = malloc(i * 4);
-// 	i = 0;
-// 	while (save)
-// 	{
-// 		arr[i] = ft_atoi(save->content);
-// 		save = save->next;
-// 		i++;
-// 	}
-// 	return (arr);
-// }
-
-// void	sort_algorithm(t_list *head, int size)
-// {
-// 	int	*stack_a;
-
-// 	stack_a = stack_a_creation(head, size);
-// }
+	size = ft_lstsize(*head);
+	if (size <= 3)
+		swap_three(head);
+	else if (size == 4 || size == 5)
+		swap_five(head, head2);
+}
