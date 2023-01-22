@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/22 20:59:30 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/22 21:28:06 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,9 +124,9 @@ int	main(int ac, char **av)
 	}
 	if_already_sort(head);
 	sort_algorithm(&head, &head2);
-	while (head)
-	{
-		printf("%d\n", head->content);
-		head=head->next;
-	}
+	// while (head)
+	// {
+	// 	printf("%d\n", head->content);
+	// 	head=head->next;
+	// }
 }
