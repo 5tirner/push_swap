@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:33:21 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/20 19:29:35 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/21 18:20:56 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,6 @@ void	swap_a_and_b(t_list **head, t_list **head2);
 void	rotate_a_and_b(t_list **head, t_list **head2);
 void	reverse_rotate_a_and_b(t_list **head, t_list **head2);
 void	if_already_sort(t_list *head);
+void	swap_three(t_list **head);
+void	swap_five(t_list **head, t_list **head2);
 #endif

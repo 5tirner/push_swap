@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:36:07 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/20 19:54:19 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/21 19:46:41 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,5 @@ void	push_a_algo(t_list **head, t_list **head2)
 		return ;
 	ft_lstadd_front(head, ft_lstnew((*head2)->content));
 	*head2 = (*head2)->next;
-	ft_printf("pa\n");
+	ft_printf("->pa\n");
 }
