@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 18:03:00 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/22 20:23:07 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/22 20:27:03 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	index_of_the_big_one(t_list *head)
 	while (save)
 	{
 		if (big == save->content)
-			break;
+			break ;
 		i++;
 		save = save->next;
 	}
@@ -80,11 +80,12 @@ void	big_to_up(t_list **head, int i)
 	}
 	else if (i == 4)
 		rev_rotate_a_algo(head);
-	printf("%d\n---\n",(*head)->content);
 }
+
 void	swap_five(t_list **head, t_list **head2)
 {
 	int	i;
+
 	i = index_of_the_big_one(*head);
 	big_to_up(head, i);
 	push_b_algo(head, head2);
