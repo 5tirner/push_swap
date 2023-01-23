@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:36:07 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/21 19:46:41 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/23 20:03:22 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	swap_a_algo(t_list **head)
 	*head = (*head)->next;
 	swap->next = (*head)->next;
 	(*head)->next = swap;
-	ft_printf("->sa\n");
+	ft_printf("sa\n");
 }
 
 void	rotate_a_algo(t_list **head)
@@ -34,7 +34,7 @@ void	rotate_a_algo(t_list **head)
 	ptr = *head;
 	*head = (*head)->next;
 	ft_lstadd_back(head, ft_lstnew(ptr->content));
-	printf("->ra\n");
+	printf("ra\n");
 }
 
 void	rev_rotate_a_algo(t_list **head)
@@ -54,7 +54,7 @@ void	rev_rotate_a_algo(t_list **head)
 		*head = (*head)->next;
 	}
 	(*head) = save;
-	ft_printf("->rra\n");
+	ft_printf("rra\n");
 }
 
 void	push_a_algo(t_list **head, t_list **head2)
@@ -63,5 +63,5 @@ void	push_a_algo(t_list **head, t_list **head2)
 		return ;
 	ft_lstadd_front(head, ft_lstnew((*head2)->content));
 	*head2 = (*head2)->next;
-	ft_printf("->pa\n");
+	ft_printf("pa\n");
 }
