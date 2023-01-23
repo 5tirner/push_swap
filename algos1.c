@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:36:07 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/23 20:03:22 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/23 22:39:28 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	rotate_a_algo(t_list **head)
 	ptr = *head;
 	*head = (*head)->next;
 	ft_lstadd_back(head, ft_lstnew(ptr->content));
-	printf("ra\n");
+	ft_printf("ra\n");
 }
 
 void	rev_rotate_a_algo(t_list **head)
