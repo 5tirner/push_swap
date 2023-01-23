@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 00:50:40 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/23 23:58:26 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/24 00:09:29 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	sort_algorithm(t_list **head, t_list **head2)
 	int	size;
 
 	size = ft_lstsize(*head);
-	if (size <= 3)
+	if (size == 2 && (*head)->content > (*head)->next->content)
+		swap_a_algo(head);
+	else if (size == 3)
 		swap_three(head);
 	else if (size == 4)
 		swap_four(head, head2);
