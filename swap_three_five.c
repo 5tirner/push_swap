@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 18:03:00 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/23 23:57:49 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/24 03:28:32 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	swap_three(t_list **head)
 		&& (*head)->next->content > (*head)->next->next->content
 		&& (*head)->content > (*head)->next->next->content)
 		rev_rotate_a_algo(head);
-	else if  ((*head)->content > (*head)->next->content)
+	else if ((*head)->content > (*head)->next->content)
 		swap_a_algo(head);
 }
 
@@ -84,7 +84,7 @@ void	swap_four(t_list **head, t_list **head2)
 void	swap_five(t_list **head, t_list **head2)
 {
 	int	i;
-	
+
 	i = index_of_the_big_one(*head);
 	big_to_up(head, i);
 	push_b_algo(head, head2);

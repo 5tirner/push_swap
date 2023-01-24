@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 20:16:38 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/22 20:25:15 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/24 03:31:38 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,11 @@ void	rotate_a_and_b(t_list **head, t_list **head2)
 	ft_printf("rr\n");
 }
 
-void	reverse_rotate_a_and_b(t_list **head, t_list **head2)
+void	norm_the_rrr(t_list **head)
 {
 	t_list	*ptr;
 	t_list	*save;
 
-	if (ft_lstsize(*head) <= 1 && ft_lstsize(*head2) <= 1)
-		return ;
 	if (ft_lstsize(*head) > 1)
 	{
 		ptr = *head;
@@ -76,18 +74,15 @@ void	reverse_rotate_a_and_b(t_list **head, t_list **head2)
 		}
 		(*head) = save;
 	}
+}
+
+void	reverse_rotate_a_and_b(t_list **head, t_list **head2)
+{
+	if (ft_lstsize(*head) <= 1 && ft_lstsize(*head2) <= 1)
+		return ;
+	if (ft_lstsize(*head) > 1)
+		norm_the_rrr(head);
 	if (ft_lstsize(*head2) > 1)
-	{
-		ptr = *head2;
-		while (ptr->next)
-			ptr = ptr->next;
-		save = ft_lstnew(ptr->content);
-		while ((*head2)->next)
-		{
-			ft_lstadd_back(&save, ft_lstnew((*head2)->content));
-			*head2 = (*head2)->next;
-		}
-		(*head2) = save;
-	}
+		norm_the_rrr(head2);
 	ft_printf("rrr\n");
 }

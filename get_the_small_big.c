@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 20:12:07 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/23 20:32:28 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/24 03:27:18 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	index_of_the_small_one(t_list *head)
 	int		small;
 	int		i;
 	t_list	*save;
-	
+
 	i = 0;
 	small = 2147483647;
 	save = head;
