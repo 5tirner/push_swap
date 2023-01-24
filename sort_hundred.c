@@ -6,25 +6,11 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 02:24:25 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/24 02:37:58 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/24 03:01:28 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	small_one(t_list *head)
-{
-	int	small;
-	
-	small = 2147483647;
-	while (head)
-	{
-		if (head->content < small)
-			small = head->content;
-		head = head->next;
-	}
-	return (small);
-}
 
 void	move_it_top_push_it_b(t_list **head, t_list **head2)
 {
@@ -42,8 +28,14 @@ void	move_it_top_push_it_b(t_list **head, t_list **head2)
 	}
 	push_b_algo(head, head2);
 }
-void	hundred_one(t_list **head, t_list **head2)
+
+void	hundreds(t_list **head, t_list **head2, int size)
 {
-	small_one(*head);
-	move_it_top_push_it_b(head, head2);
+	int i;
+
+	i = -1;
+	while (++i < size)
+		move_it_top_push_it_b(head, head2);
+	while (--i > -1)
+		push_a_algo(head, head2);
 }
