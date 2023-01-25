@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 04:03:57 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/25 04:52:55 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/25 06:59:58 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,9 @@ int main()
 	scanf("%d", &min);
 	printf("Enter the max nbr: ");
 	scanf("%d", &max);
-	printf("1: duplicate possibe\n2: no duplicate possibe");
+	printf("1: duplicate possibe\n2: no duplicate possibe\n");
 	scanf("%d", &duplicate_check);
+	printf("waiting...\n");
 	dup2(fd, 1);
 	if (duplicate_check == 1)
 	{
@@ -76,5 +77,13 @@ int main()
 				i++;
 			}
     	}
+		i = 0;
+		while (i < n)
+		{
+			if (i != 0)
+				printf(" ");
+			printf("%d", arr[i]);
+			i++;
+		}
 	}
 }
