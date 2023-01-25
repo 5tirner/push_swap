@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 04:03:57 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/25 07:41:18 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/25 11:15:53 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int main()
 	{
    		while (i < n)
    		{
-	        random_number = rand() / 10;
+	        random_number = rand() / 9;
 			if (random_number >= min && random_number <= max)
 			{
 				if (i != 0)
@@ -70,8 +70,8 @@ int main()
 	{
 		while (i < n)
    		{
-	        random_number = rand() / 10;
-			if (no_dup(random_number, i, &arr), random_number >= min && random_number <= max)
+	        random_number = rand() / 9;
+			if (!no_dup(random_number, i, &arr) && random_number >= min && random_number <= max)
 			{
 				arr[i] = random_number;
 				i++;
@@ -86,4 +86,6 @@ int main()
 			i++;
 		}
 	}
+	dup2(1, fd);
+	write(fd, "If there's any mistake please tell me, i do this generator quiqly so...\n", 72);
 }
