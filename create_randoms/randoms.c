@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 04:03:57 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/25 06:59:58 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/25 07:41:18 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int main()
 	{
    		while (i < n)
    		{
-	        random_number = rand();
+	        random_number = rand() / 10;
 			if (random_number >= min && random_number <= max)
 			{
 				if (i != 0)
@@ -70,7 +70,7 @@ int main()
 	{
 		while (i < n)
    		{
-	        random_number = rand();
+	        random_number = rand() / 10;
 			if (no_dup(random_number, i, &arr), random_number >= min && random_number <= max)
 			{
 				arr[i] = random_number;

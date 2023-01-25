@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 03:34:51 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/25 03:38:41 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/25 07:51:26 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	if_duplcated(t_list *head)
 		i++;
 		head = head->next;
 	}
-	i = 0;
-	while (i < size)
+	i = -1;
+	while (++i < size)
 	{
 		j = i + 1;
 		while (j < size)
@@ -38,6 +38,5 @@ void	if_duplcated(t_list *head)
 				error_generate();
 			j++;
 		}
-		i++;
 	}
 }
