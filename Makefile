@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/01/24 02:37:38 by zasabri          ###   ########.fr        #
+#    Updated: 2023/01/25 03:39:11 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,8 @@ SRC		= push_swap.c\
 		swap_three_five.c\
 		get_the_small_big.c\
 		sort_hundred.c\
+		error_generate.c\
+		check_duplicate.c\
 
 OBJS	= $(SRC:.c=.o)
 

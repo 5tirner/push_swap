@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/24 03:26:57 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/25 03:40:58 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,12 @@ int	ft_sign(const char *str)
 			else if (str[i] == '-' && (str[i + 1] >= '0' && str[i + 1] <= '9'))
 				sign = -1;
 			else
-			{
-				ft_printf("Error\n");
-				exit(1);
-			}
+				error_generate();
 			i++;
 		}
 		i++;
 	}
 	return (sign);
-}
-
-int	ft_check_over(int sign)
-{
-	sign = 0;
-	ft_printf("Error\n");
-	exit(1);
 }
 
 int	ft_int(const char *str)
@@ -66,7 +56,7 @@ int	ft_int(const char *str)
 	{
 		t = res * 10 + str[i] - 48;
 		if (t < res)
-			return (ft_check_over(sign));
+			error_generate();
 		res = t;
 		i++;
 	}
@@ -76,8 +66,10 @@ int	ft_int(const char *str)
 void	ft_all_is_good(char *av)
 {
 	int	i;
+	int	sign_check;
 
 	i = 0;
+	sign_check = 0;
 	if (!av[0])
 	{
 		printf("Error\n");
@@ -88,11 +80,11 @@ void	ft_all_is_good(char *av)
 		if ((av[i] < '0' || av[i] > '9')
 			&& (av[i] != '-' && av[i] != '+') && (av[i] != ' ')
 			&& (av[i] != 34))
-		{
-			ft_printf("Error\n");
-			ft_printf("Probleme with this argement: %s\n", av);
-			exit(0);
-		}
+			error_generate();
+		if (av[i] == '+' || av[i] == '-')
+			sign_check++;
+		if (sign_check >= 2)
+			error_generate();
 		i++;
 	}
 }
@@ -122,6 +114,7 @@ int	main(int ac, char **av)
 		}
 		i++;
 	}
+	if_duplcated(head);
 	if_already_sort(head);
 	sort_algorithm(&head, &head2);
 }
