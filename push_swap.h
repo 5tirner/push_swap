@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:33:21 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/25 07:49:29 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/25 10:11:10 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_arr
 {
 	int	*arr;
+	int	place;
 }	t_arr;
 
 void	swap_a_algo(t_list **head);
