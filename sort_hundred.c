@@ -6,26 +6,11 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 02:24:25 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/26 17:33:14 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/27 21:48:34 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	find_the_index(t_list *head, int nb)
-{
-	int i;
-
-	i = 0;
-	while (head)
-	{
-		if (nb == head->content)
-			break ;
-		i++;
-		head = head->next;
-	}
-	return (i);
-}
 
 void	sort_it_in_arr(t_arr *sort_arr, t_list *head)
 {
@@ -62,27 +47,52 @@ int	*chunks(t_arr *array, int size)
 	int	i;
 	int	*save;
 
-	save = malloc(6);
-	i = 0;
-	if (size <= 250)
+	i = -1;
+	if (size >= 20 && size <= 250)
 	{
-		while (i < 6 && array->place < size)
+		save = malloc(20 * 4);
+		while (++i < 20 && array->place < size)
 		{
-			save[i] = array->arr[i];
-			i++;
+			save[i] = array->arr[array->place];
 			array->place++;
 		}
 	}
-	if (size > 250 && size <= 500)
+	else if (size > 250 && size <= 500)
 	{
-		while (i < 12 && array->place < size)
+		save = malloc(25 * 4);
+		while (++i < 25 && array->place < size - 1)
 		{
 			save[i] = array->arr[i];
-			i++;
+			array->place++;
+		}
+	}
+	else
+	{
+		save = malloc(size * 4);
+		while (++i < 20 && array->place < size)
+		{
+			save[i] = array->arr[array->place];
 			array->place++;
 		}
 	}
 	return (save);
+}
+
+int	find_the_index(t_list *head, int nb)
+{
+	int i;
+
+	i = 0;
+	while (head)
+	{
+		printf("nb == %d, val == %d\n", nb,head->content);
+		if (nb == head->content)
+			break ;
+		i++;
+		head = head->next;
+	}
+	printf("find i %d\n", i);
+	return (i);
 }
 
 int	get_the_right_number(t_list *head, int *arr)
@@ -92,10 +102,10 @@ int	get_the_right_number(t_list *head, int *arr)
 	while (head)
 	{
 		i = 0;
-		while (i < 6)
+		while (i < 20)
 		{
 			if (arr[i] == head->content)
-				return (find_the_index(head, head->content));
+				return (head->content);
 			i++;
 		}
 		head = head->next;
@@ -103,15 +113,13 @@ int	get_the_right_number(t_list *head, int *arr)
 	return (0);
 }
 
-void	move_it_top_push_it_b(t_list **head, t_list **head2, t_arr *array, int size)
+void	move_it_top_push_it_b(t_list **head, t_list **head2)
 {
 	int	i;
-	int	*chunk;
 
-	chunk = chunks(array, size);
 	while (1)
 	{
-		i = get_the_right_number(*head, chunk);
+		i = index_of_the_small_one(*head);
 		if (i == 0)
 			break ;
 		else if (i >= 1 && i <= ft_lstsize(*head) / 2)
@@ -125,12 +133,31 @@ void	move_it_top_push_it_b(t_list **head, t_list **head2, t_arr *array, int size
 void	hundreds(t_list **head, t_list **head2, int size)
 {
 	t_arr	sort_arr;
+	int		i;
 
+	i = 0;
+	if (size >= 6 && size <= 20)
+	{
+		while (*head)
+			move_it_top_push_it_b(head, head2);
+		while(*head2)
+			push_a_algo(head, head2);
+	}
+	else
+	{
 	sort_arr.place = 0;
 	sort_it_in_arr(&sort_arr, *head);
-	while (*head)
-	{
-		move_it_top_push_it_b(head, head2, &sort_arr, size);
-		*head = (*head)->next;
+	i = 0;
+	while (i < size)
+		printf("%d ", sort_arr.arr[i++]);
+	printf("\n--------\n");
+	int *chunk = chunks(&sort_arr, size);
+	i =0;
+	while (i < 20)
+		printf("%d\n", chunk[i++]);
+	printf("------\n");
+	(*head) = (*head)->next;
+	i = get_the_right_number(*head, chunk);
+	printf("%d", i);
 	}
 }
