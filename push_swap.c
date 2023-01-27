@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/27 22:38:07 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/27 22:51:25 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ int	main(int ac, char **av)
 		return (0);
 	head = NULL;
 	head2 = NULL;
-	i = 1;
-	while (av[i])
+	i = 0;
+	while (av[++i])
 	{
 		ft_all_is_good(av[i]);
 		j = 0;
