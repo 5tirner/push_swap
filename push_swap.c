@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/27 21:49:13 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/27 22:38:07 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,10 +71,7 @@ void	ft_all_is_good(char *av)
 	i = 0;
 	sign_check = 0;
 	if (!av[0])
-	{
-		printf("Error\n");
-		exit(1);
-	}
+		error_generate();
 	while (av[i])
 	{
 		if ((av[i] < '0' || av[i] > '9')
@@ -87,6 +84,11 @@ void	ft_all_is_good(char *av)
 			error_generate();
 		i++;
 	}
+	i = 0;
+	while (av[i] && !ft_isdigit(av[i]))
+		i++;
+	if ((size_t)i == ft_strlen(av))
+		error_generate();
 }
 
 int	main(int ac, char **av)
@@ -117,15 +119,4 @@ int	main(int ac, char **av)
 	if_duplcated(head);
 	if_already_sort(head);
 	sort_algorithm(&head, &head2);
-	// while (head)
-	// {
-	// 	printf("%d\n", head->content);
-	// 	head = head->next;
-	// }
-	// printf("----\n");
-	// while (head2)
-	// {
-	// 	printf("%d\n", head2->content);
-	// 	head2 = head2->next;
-	// }
 }

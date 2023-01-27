@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 02:24:25 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/27 21:48:34 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/27 22:14:35 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	*chunks(t_arr *array, int size)
 	int	*save;
 
 	i = -1;
-	if (size >= 20 && size <= 250)
+	if (size > 20 && size <= 250)
 	{
 		save = malloc(20 * 4);
 		while (++i < 20 && array->place < size)
@@ -67,14 +67,7 @@ int	*chunks(t_arr *array, int size)
 		}
 	}
 	else
-	{
-		save = malloc(size * 4);
-		while (++i < 20 && array->place < size)
-		{
-			save[i] = array->arr[array->place];
-			array->place++;
-		}
-	}
+		exit(0);
 	return (save);
 }
 
@@ -145,19 +138,19 @@ void	hundreds(t_list **head, t_list **head2, int size)
 	}
 	else
 	{
-	sort_arr.place = 0;
-	sort_it_in_arr(&sort_arr, *head);
-	i = 0;
-	while (i < size)
-		printf("%d ", sort_arr.arr[i++]);
-	printf("\n--------\n");
-	int *chunk = chunks(&sort_arr, size);
-	i =0;
-	while (i < 20)
-		printf("%d\n", chunk[i++]);
-	printf("------\n");
-	(*head) = (*head)->next;
-	i = get_the_right_number(*head, chunk);
-	printf("%d", i);
+		sort_arr.place = 0;
+		sort_it_in_arr(&sort_arr, *head);
+		i = 0;
+		while (i < size)
+			printf("%d ", sort_arr.arr[i++]);
+		printf("\n--------\n");
+		int *chunk = chunks(&sort_arr, size);
+		i =0;
+		while (i < 20)
+			printf("%d\n", chunk[i++]);
+		printf("------\n");
+		(*head) = (*head)->next;
+		i = get_the_right_number(*head, chunk);
+		printf("%d", i);
 	}
 }
