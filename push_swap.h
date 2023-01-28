@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:33:21 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/25 10:11:10 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/27 23:05:57 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ void	swap_four(t_list **head, t_list **head2);
 void	hundreds(t_list **head, t_list **head2, int size);
 void	error_generate(void);
 void	if_duplcated(t_list *head);
+void	sort_it_in_arr(t_arr *sort_arr, t_list *head);
 #endif

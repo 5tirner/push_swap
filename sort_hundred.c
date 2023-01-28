@@ -6,41 +6,11 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 02:24:25 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/27 22:14:35 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/27 23:05:24 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	sort_it_in_arr(t_arr *sort_arr, t_list *head)
-{
-	int	i;
-	int	size;
-	int	swap;
-	
-	size = ft_lstsize(head);
-	i = 0;
-	sort_arr->arr = malloc(size * 4);
-	while (head)
-	{
-		sort_arr->arr[i] = head->content;
-		head = head->next;
-		i++;
-	}
-	i = 0;
-	while (i < size - 1)
-	{
-		if (sort_arr->arr[i] > sort_arr->arr[i + 1])
-		{
-			swap = sort_arr->arr[i];
-			sort_arr->arr[i] = sort_arr->arr[i + 1];
-			sort_arr->arr[i + 1] = swap;
-			i = 0;
-		}
-		else
-			i++;
-	}
-}
 
 int	*chunks(t_arr *array, int size)
 {
@@ -73,18 +43,16 @@ int	*chunks(t_arr *array, int size)
 
 int	find_the_index(t_list *head, int nb)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (head)
 	{
-		printf("nb == %d, val == %d\n", nb,head->content);
 		if (nb == head->content)
 			break ;
 		i++;
 		head = head->next;
 	}
-	printf("find i %d\n", i);
 	return (i);
 }
 
@@ -133,7 +101,7 @@ void	hundreds(t_list **head, t_list **head2, int size)
 	{
 		while (*head)
 			move_it_top_push_it_b(head, head2);
-		while(*head2)
+		while (*head2)
 			push_a_algo(head, head2);
 	}
 	else

@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/01/27 22:37:10 by zasabri          ###   ########.fr        #
+#    Updated: 2023/01/27 23:06:13 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRC		= push_swap.c\
 		error_generate.c\
 		check_duplicate.c\
 		./libft/ft_isdigit.c\
+		sort_head_in_arr.c\
 
 OBJS	= $(SRC:.c=.o)
 
