@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 02:24:25 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/28 22:34:38 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/28 23:26:14 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	*chunks(t_arr *array, int size)
 	int	*save;
 
 	i = -1;
-	if (size > 20 && size <= 250)
+	if (size > 40 && size <= 250)
 	{
 		save = malloc(20 * 4);
 		while (++i < 20 && array->place < size)
@@ -113,14 +113,14 @@ void	hundreds(t_list **head, t_list **head2, int size)
 	t_arr	sort_arr;
 	int		*chunk;
 
-	if (size >= 6 && size <= 20)
+	if (size >= 6 && size <= 40)
 	{
 		while (*head)
 			move_it_top_push_it_b(head, head2);
 		while (*head2)
 			push_a_algo(head, head2);
 	}
-	else if (size > 20 && size <= 500)
+	else if (size > 40 && size <= 500)
 	{
 		sort_arr.place = 0;
 		sort_it_in_arr(&sort_arr, *head);
