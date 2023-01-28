@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 02:24:25 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/27 23:05:24 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/28 22:34:38 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	*chunks(t_arr *array, int size)
 			array->place++;
 		}
 	}
-	else if (size > 250 && size <= 500)
+	else
 	{
 		save = malloc(25 * 4);
 		while (++i < 25 && array->place < size - 1)
@@ -36,8 +36,6 @@ int	*chunks(t_arr *array, int size)
 			array->place++;
 		}
 	}
-	else
-		exit(0);
 	return (save);
 }
 
@@ -66,12 +64,12 @@ int	get_the_right_number(t_list *head, int *arr)
 		while (i < 20)
 		{
 			if (arr[i] == head->content)
-				return (head->content);
+				return (find_the_index(head, head->content));
 			i++;
 		}
 		head = head->next;
 	}
-	return (0);
+	return (1000);
 }
 
 void	move_it_top_push_it_b(t_list **head, t_list **head2)
@@ -91,12 +89,30 @@ void	move_it_top_push_it_b(t_list **head, t_list **head2)
 	push_b_algo(head, head2);
 }
 
+void	almost_sort_in_b(t_list **head, t_list **head2, t_arr *array)
+{
+	int	i;
+
+	while (1)
+	{
+		i = get_the_right_number(*head, array->arr);
+		if (i == 1000)
+			return ;
+		else if (i == 0)
+			break ;
+		else if (i >= 1 && i <= ft_lstsize(*head) / 2)
+			rotate_a_algo(head);
+		else
+			rev_rotate_a_algo(head);
+	}
+	push_b_algo(head, head2);
+}
+
 void	hundreds(t_list **head, t_list **head2, int size)
 {
 	t_arr	sort_arr;
-	int		i;
+	int		*chunk;
 
-	i = 0;
 	if (size >= 6 && size <= 20)
 	{
 		while (*head)
@@ -104,21 +120,14 @@ void	hundreds(t_list **head, t_list **head2, int size)
 		while (*head2)
 			push_a_algo(head, head2);
 	}
-	else
+	else if (size > 20 && size <= 500)
 	{
 		sort_arr.place = 0;
 		sort_it_in_arr(&sort_arr, *head);
-		i = 0;
-		while (i < size)
-			printf("%d ", sort_arr.arr[i++]);
-		printf("\n--------\n");
-		int *chunk = chunks(&sort_arr, size);
-		i =0;
-		while (i < 20)
-			printf("%d\n", chunk[i++]);
-		printf("------\n");
-		(*head) = (*head)->next;
-		i = get_the_right_number(*head, chunk);
-		printf("%d", i);
+		while (head)
+		{
+			chunk = chunks(&sort_arr, size);
+			almost_sort_in_b(head, head2, &sort_arr);
+		}
 	}
 }
