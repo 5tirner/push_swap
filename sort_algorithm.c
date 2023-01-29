@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 00:50:40 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/29 22:52:04 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/29 23:38:23 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	sort_algorithm(t_list **head, t_list **head2)
 {
 	int	size;
-	int	mid;
 	int	*arr;
 
 	arr = fill_arr(*head);
@@ -29,8 +28,5 @@ void	sort_algorithm(t_list **head, t_list **head2)
 	else if (size == 5)
 		swap_five(head, head2);
 	else if (size >= 6 && size <= 500)
-	{
-		mid = (size / 2) - 1;
-		hundreds(head, head, mid);
-	}
+		hundreds(head, head2, arr);
 }

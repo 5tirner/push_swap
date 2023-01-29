@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:33:21 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/29 22:51:00 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/29 23:07:47 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	sort_algorithm(t_list **head, t_list **head2);
 int		index_of_the_big_one(t_list *head);
 int		index_of_the_small_one(t_list *head);
 void	swap_four(t_list **head, t_list **head2);
-void	hundreds(t_list **head, t_list **head2, int mid);
+void	hundreds(t_list **head, t_list **head2, int *arr);
 void	error_generate(void);
 void	if_duplcated(t_list *head);
 int		*fill_arr(t_list *head);
