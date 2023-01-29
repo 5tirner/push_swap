@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:33:21 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/27 23:05:57 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/29 22:51:00 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@
 # include "./libft/libft.h"
 # include "./ft_printf/ft_printf.h"
 # include <stdio.h>
-
-typedef struct s_arr
-{
-	int	*arr;
-	int	place;
-}	t_arr;
 
 void	swap_a_algo(t_list **head);
 void	rotate_a_algo(t_list **head);
@@ -41,8 +35,8 @@ void	sort_algorithm(t_list **head, t_list **head2);
 int		index_of_the_big_one(t_list *head);
 int		index_of_the_small_one(t_list *head);
 void	swap_four(t_list **head, t_list **head2);
-void	hundreds(t_list **head, t_list **head2, int size);
+void	hundreds(t_list **head, t_list **head2, int mid);
 void	error_generate(void);
 void	if_duplcated(t_list *head);
-void	sort_it_in_arr(t_arr *sort_arr, t_list *head);
+int		*fill_arr(t_list *head);
 #endif
