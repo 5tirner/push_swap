@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 02:24:25 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/30 04:09:38 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/30 04:26:41 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,14 @@ void	hundreds(t_list **head, t_list **head2, int *arr)
 			end += offest;
 		}
 	}
+	push_b_algo(head, head2);
+	if ((*head2)->content < (*head2)->next->content)
+		swap_b_algo(head2);
+	push_a_algo(head, head2);
+	// while (head2)
+	// {
+	// 	push_a_algo(head, head2);
+	// 	// if ((*head)->content > (*head)->next->content)
+	// 	// 	rotate_a_algo(head);
+	// }
 }
