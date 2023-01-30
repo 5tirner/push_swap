@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 02:24:25 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/29 23:48:08 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/30 04:09:38 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,31 @@ void	hundreds(t_list **head, t_list **head2, int *arr)
 	int	start;
 	int	end;
 	int	i;
+	int size = ft_lstsize(*head);
 	
 	mid	= ft_lstsize(*head) / 2 - 1;
 	offest = ft_lstsize(*head) / mid;
 	start = mid - offest;
 	end = mid + offest;
-	i = -1;
-	while (i < end)
+	i = 0;
+	while (i < size)
 	{
 		if ((*head)->content >= arr[start] && (*head)->content <= arr[end])
 		{
 			push_b_algo(head, head2);
 			if ((*head2)->content < arr[mid])
 				rotate_b_algo(head2);
+			i = 0;
 		}
 		else
 		{
 			rotate_a_algo(head);
 			i++;
+		}
+		if (i == end)
+		{
+			start -= offest;
+			end += offest;
 		}
 	}
 }
