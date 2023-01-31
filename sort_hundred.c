@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 02:24:25 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/31 04:52:35 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:06:29 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	big_to_top(t_list **head2, int size)
 	{
 		i = index_of_the_big_one(*head2);
 		if (i == 0)
-			break;
+			break ;
 		else if (i <= size / 2)
 			rotate_b_algo(head2);
 		else if (i > size / 2)
@@ -33,7 +33,6 @@ void	from_head_to_head2(t_list **head, t_list **head2, int *arr, int range)
 	int	i;
 
 	i = 0;
-	(void)range;
 	while (*head)
 	{
 		if ((*head)->content <= arr[i])
@@ -42,7 +41,8 @@ void	from_head_to_head2(t_list **head, t_list **head2, int *arr, int range)
 			rotate_b_algo(head2);
 			i++;
 		}
-		else if ((*head)->content > arr[i] && (*head)->content <= arr[range + i])
+		else if ((*head)->content > arr[i]
+			&& (*head)->content <= arr[range + i])
 		{
 			push_b_algo(head, head2);
 			i++;
@@ -55,9 +55,9 @@ void	from_head_to_head2(t_list **head, t_list **head2, int *arr, int range)
 void	hundreds(t_list **head, t_list **head2, int *arr)
 {
 	int	range;
-	
+
 	if (ft_lstsize(*head) >= 6 && ft_lstsize(*head) <= 16)
-		range = 5;
+		range = 3;
 	else if (ft_lstsize(*head) <= 100)
 		range = 13;
 	else if (ft_lstsize(*head) <= 500)

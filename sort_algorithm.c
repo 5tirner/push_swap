@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 00:50:40 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/30 09:21:17 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:12:29 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ void	sort_algorithm(t_list **head, t_list **head2)
 		swap_five(head, head2);
 	else if (size >= 6 && size <= 500)
 		hundreds(head, head2, arr);
+	free(arr);
 }

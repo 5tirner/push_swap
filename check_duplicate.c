@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 03:34:51 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/25 07:51:26 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:13:24 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,12 @@ void	if_duplcated(t_list *head)
 		while (j < size)
 		{
 			if (arr[i] == arr[j])
+			{
+				free(arr);
 				error_generate();
+			}
 			j++;
 		}
 	}
+	free(arr);
 }
