@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/31 09:15:17 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/31 10:17:04 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,16 +107,13 @@ int	main(int ac, char **av)
 	while (av[++i])
 	{
 		ft_all_is_good(av[i]);
-		j = 0;
+		j = -1;
 		str = ft_split(av[i], ' ');
-		while (str[j])
-		{
+		while (str[++j])
 			ft_lstadd_back(&head, ft_lstnew(ft_int(str[j])));
-			j++;
-		}
+		free_str(str);
 	}
 	if_duplcated(head);
 	if_already_sort(head);
 	sort_algorithm(&head, &head2);
-	//while (1);
 }

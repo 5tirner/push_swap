@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:33:21 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/29 23:07:47 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/01/31 09:58:38 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ void	hundreds(t_list **head, t_list **head2, int *arr);
 void	error_generate(void);
 void	if_duplcated(t_list *head);
 int		*fill_arr(t_list *head);
+void	free_str(char **str);
 #endif
