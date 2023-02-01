@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:28:30 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 14:05:44 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/01 14:43:25 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,12 +95,14 @@ int	main(int ac, char **av)
 {
 	int		i;
 	t_list	*head;
+	t_list	*head2;
 	char	**str;
 	int		j;
 
 	if (ac == 1)
 		return (0);
-	head = 0;
+	head = NULL;
+	head2 = NULL;
 	i = 0;
 	while (av[++i])
 	{
@@ -113,4 +115,5 @@ int	main(int ac, char **av)
 	}
 	if_dup(head);
 	if_alr_sort(head);
+	checker_aplly(&head, &head2);
 }

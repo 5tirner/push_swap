@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/02/01 14:02:18 by zasabri          ###   ########.fr        #
+#    Updated: 2023/02/01 14:46:37 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,11 @@ SRC_BONUS	= ./bonus/ft_checker.c\
 			./libft/ft_bzero.c\
 			./libft/ft_putstr_fd.c\
 			./libft/ft_isdigit.c\
+			algos1.c\
+			algos2.c\
+			algos3.c\
+			./bonus/checker_apply.c\
+			./libft/ft_strnstr.c\
 
 OBJS	= $(SRC:.c=.o)
 

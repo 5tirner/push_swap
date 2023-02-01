@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:31:22 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 13:53:20 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/01 14:42:42 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@
 
 void	if_dup(t_list *head);
 void	if_alr_sort(t_list *head);
+void	checker_aplly(t_list **head, t_list **head2);
 #endif
