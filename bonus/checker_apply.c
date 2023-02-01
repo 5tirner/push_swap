@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:06:17 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 14:51:38 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/01 15:26:29 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	checker_aplly(t_list **head, t_list **head2)
 	while (1)
 	{
 		line = get_next_line(0);
+		if (line == NULL)
+			break;
 		if (ft_strnstr(line, "sa\n", 3))
 			swap_a_algo(head);
 		else if (ft_strnstr(line, "ra\n", 3))
@@ -71,10 +73,11 @@ void	checker_aplly(t_list **head, t_list **head2)
 		else if (ft_strnstr(line, "rrr\n", 4))
 			reverse_rotate_a_and_b(head, head2);
 		else
+		{
+			free(line);
 			error_generate();
+		}
 		free(line);
-		if (line == NULL)
-			break;
 	}
 	print_ok_or_ko(*head);
 }
