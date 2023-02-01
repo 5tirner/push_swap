@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:33:21 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 11:14:27 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/01 13:13:53 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,6 @@ void	error_generate(void);
 void	if_duplcated(t_list *head);
 int		*fill_arr(t_list *head);
 void	free_str(char **str);
+void	ft_all_is_good(char *av);
+int		ft_int(const char *str);
 #endif

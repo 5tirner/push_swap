@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/02/01 11:54:17 by zasabri          ###   ########.fr        #
+#    Updated: 2023/02/01 14:02:18 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,37 @@ SRC		= push_swap.c\
 SRC_BONUS	= ./bonus/ft_checker.c\
 			./bonus/GNL/get_next_line.c\
 			./bonus/GNL/get_next_line_utils.c\
+			./bonus/check_dup.c\
+			./bonus/deja_msortin.c\
+			error_generate.c\
+			free_str.c\
+			./libft/ft_lstadd_back.c\
+			./libft/ft_atoi.c\
+			./libft/ft_strdup.c\
+			./libft/ft_lstlast.c\
+			./libft/ft_lstnew.c\
+			./libft/ft_strlen.c\
+			./ft_printf/ft_char.c\
+			./ft_printf/ft_check_format.c\
+			./ft_printf/ft_hex_ptr_len.c\
+			./ft_printf/ft_hex.c\
+			./ft_printf/ft_number.c\
+			./ft_printf/ft_percentage.c\
+			./ft_printf/ft_printf.c\
+			./ft_printf/ft_ptr.c\
+			./ft_printf/ft_putchar.c\
+			./ft_printf/ft_string.c\
+			./ft_printf/ft_unsigned.c\
+			./ft_printf/ft_utoa.c\
+			./ft_printf/ft_itoa.c\
+			./libft/ft_lstadd_front.c\
+			./libft/ft_strncmp.c\
+			./libft/ft_lstsize.c\
+			./libft/ft_split.c\
+			./libft/ft_calloc.c\
+			./libft/ft_bzero.c\
+			./libft/ft_putstr_fd.c\
+			./libft/ft_isdigit.c\
 
 OBJS	= $(SRC:.c=.o)
 
@@ -65,7 +96,7 @@ CFLAGS	= -Wall -Wextra -Werror
 
 PROG	= push_swap
 
-PROG_BONUS = push_swap_bonus
+PROG_BONUS = ft_checker
 
 RM		= rm -rf
 
