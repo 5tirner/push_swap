@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 02:24:25 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/31 10:30:30 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/01 15:44:58 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	from_head_to_head2(t_list **head, t_list **head2, int *arr, int range)
 			&& (*head)->content <= arr[range + i])
 		{
 			push_b_algo(head, head2);
-			if (ft_lstsize(*head2) > 1 && (*head2)->content < (*head2)->next->content)
+			if (ft_lstsize(*head2) > 1
+				&& (*head2)->content < (*head2)->next->content)
 				swap_b_algo(head2);
 			i++;
 		}
