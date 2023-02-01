@@ -5,14 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 10:29:56 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 11:19:42 by zasabri          ###   ########.fr       */
+/*   Created: 2023/02/01 11:28:30 by zasabri           #+#    #+#             */
+/*   Updated: 2023/02/01 11:59:12 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	main()
+int main()
 {
-	
+	int fd = open("./GNL/get_next_line.c", O_RDONLY, 0777);
+	char *line;
+	while (1)
+	{
+		line = get_next_line(fd);
+		printf("%s", line);
+		if (line == NULL)
+			break;
+		free(line);
+	}
 }

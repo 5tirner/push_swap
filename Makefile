@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/02/01 10:39:38 by zasabri          ###   ########.fr        #
+#    Updated: 2023/02/01 11:54:17 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,9 @@ SRC		= push_swap.c\
 		sort_head_in_arr.c\
 		free_str.c\
 
-SRC_BONUS = ft_checker.c\
+SRC_BONUS	= ./bonus/ft_checker.c\
+			./bonus/GNL/get_next_line.c\
+			./bonus/GNL/get_next_line_utils.c\
 
 OBJS	= $(SRC:.c=.o)
 
