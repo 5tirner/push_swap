@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 23:33:21 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 13:13:53 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/01 16:55:01 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include "./ft_printf/ft_printf.h"
 # include <stdio.h>
 
+typedef struct s_vars
+{
+	int	i;
+	int	size;
+	int	swap;
+}	t_vars;
 void	swap_a_algo(t_list **head);
 void	rotate_a_algo(t_list **head);
 void	rev_rotate_a_algo(t_list **head);

@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 23:05:28 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/30 09:19:08 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/01 17:01:05 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,30 @@
 
 int	*fill_arr(t_list *head)
 {
-	int	i;
-	int	size;
-	int	swap;
 	int	*arr;
+	t_vars var;
 
-	size = ft_lstsize(head);
-	i = 0;
-	arr = malloc(size * 4);
+	var.size = ft_lstsize(head);
+	var.i = 0;
+	arr = malloc(var.size * 4);
 	while (head)
 	{
-		arr[i] = head->content;
+		arr[var.i] = head->content;
 		head = head->next;
-		i++;
+		var.i++;
 	}
-	i = 0;
-	while (i < size - 1)
+	var.i = 0;
+	while (var.i < var.size - 1)
 	{
-		if (arr[i] > arr[i + 1])
+		if (arr[var.i] > arr[var.i + 1])
 		{
-			swap = arr[i];
-			arr[i] = arr[i + 1];
-			arr[i + 1] = swap;
-			i = 0;
+			var.swap = arr[var.i];
+			arr[var.i] = arr[var.i + 1];
+			arr[var.i + 1] = var.swap;
+			var.i = 0;
 		}
 		else
-			i++;
+			var.i++;
 	}
 	return (arr);
 }

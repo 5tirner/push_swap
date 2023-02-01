@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 21:01:47 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 16:25:25 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/01 16:58:32 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,4 @@ int	main(int ac, char **av)
 	if_duplcated(head);
 	if_already_sort(head);
 	sort_algorithm(&head, &head2);
-	system("leaks push_swap");
 }
