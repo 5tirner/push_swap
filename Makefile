@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/02/01 16:15:08 by zasabri          ###   ########.fr        #
+#    Updated: 2023/02/01 16:20:26 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,6 +126,6 @@ clean :
 
 fclean : clean
 
-	$(RM) $(PROG)
+	$(RM) $(PROG) $(PROG_BONUS)
 
 re : fclean all
