@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:28:30 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 11:59:12 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/01 12:11:54 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int main()
 {
-	int fd = open("./GNL/get_next_line.c", O_RDONLY, 0777);
 	char *line;
 	while (1)
 	{
-		line = get_next_line(fd);
+		line = get_next_line(1);
 		printf("%s", line);
 		if (line == NULL)
 			break;

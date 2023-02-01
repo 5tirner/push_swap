@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:31:22 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 11:33:47 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/01 12:08:40 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,4 @@
 
 # include "./GNL/get_next_line.h"
 # include "../push_swap.h"
-
 #endif
