@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/02/01 15:52:18 by zasabri          ###   ########.fr        #
+#    Updated: 2023/02/01 16:15:08 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,11 +51,11 @@ SRC		= push_swap.c\
 		sort_head_in_arr.c\
 		free_str.c\
 
-SRC_BONUS	= ./bonus/ft_checker.c\
+SRC_BONUS	= ./bonus/ft_checker_bonus.c\
 			./bonus/GNL/get_next_line.c\
 			./bonus/GNL/get_next_line_utils.c\
-			./bonus/check_dup.c\
-			./bonus/deja_msortin.c\
+			./bonus/check_dup_bonus.c\
+			./bonus/deja_msortin_bonus.c\
 			error_generate.c\
 			free_str.c\
 			./libft/ft_lstadd_back.c\
@@ -88,8 +88,11 @@ SRC_BONUS	= ./bonus/ft_checker.c\
 			algos1.c\
 			algos2.c\
 			algos3.c\
-			./bonus/checker_apply.c\
+			./bonus/checker_apply_bonus.c\
 			./libft/ft_strnstr.c\
+			./bonus/algo1_bonus.c\
+			./bonus/algo2_bonus.c\
+			./bonus/algo3_bonus.c\
 
 OBJS	= $(SRC:.c=.o)
 

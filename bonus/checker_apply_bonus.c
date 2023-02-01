@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_apply.c                                    :+:      :+:    :+:   */
+/*   checker_apply_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 14:06:17 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 15:44:19 by zasabri          ###   ########.fr       */
+/*   Created: 2023/02/01 16:01:32 by zasabri           #+#    #+#             */
+/*   Updated: 2023/02/01 16:18:07 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,35 +44,35 @@ void	print_ok_or_ko(t_list *head)
 void	for_head_a(t_list **head, t_list **head2, char *line)
 {
 	if (ft_strnstr(line, "sa\n", 3))
-		swap_a_algo(head);
+		swap_a_algo_bonus(head);
 	else if (ft_strnstr(line, "ra\n", 3))
-		rotate_a_algo(head);
+		rotate_a_algo_bonus(head);
 	else if (ft_strnstr(line, "rra\n", 4))
-		rev_rotate_a_algo(head);
+		rev_rotate_a_algo_bonus(head);
 	else if (ft_strnstr(line, "pa\n", 3))
-		push_a_algo(head, head2);
+		push_a_algo_bonus(head, head2);
 }
 
 void	for_head2(t_list **head, t_list **head2, char *line)
 {
 	if (ft_strnstr(line, "sb\n", 3))
-		swap_b_algo(head2);
+		swap_b_algo_bonus(head2);
 	else if (ft_strnstr(line, "rb\n", 3))
-		rotate_b_algo(head2);
+		rotate_b_algo_bonus(head2);
 	else if (ft_strnstr(line, "rrb\n", 4))
-		rev_rotate_b_algo(head2);
+		rev_rotate_b_algo_bonus(head2);
 	else if (ft_strnstr(line, "pb\n", 3))
-		push_b_algo(head, head2);
+		push_b_algo_bonus(head, head2);
 }
 
 void	for_both(t_list **head, t_list **head2, char *line)
 {
 	if (ft_strnstr(line, "ss\n", 3))
-		swap_a_and_b(head, head2);
+		swap_a_and_b_bonus(head, head2);
 	else if (ft_strnstr(line, "rr\n", 3))
-		rotate_a_and_b(head, head2);
+		rotate_a_and_b_bonus(head, head2);
 	else if (ft_strnstr(line, "rrr\n", 4))
-		reverse_rotate_a_and_b(head, head2);
+		reverse_rotate_a_and_b_bonus(head, head2);
 }
 
 void	checker_aplly(t_list **head, t_list **head2)

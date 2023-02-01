@@ -1,54 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_dup.c                                        :+:      :+:    :+:   */
+/*   deja_msortin_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 13:45:33 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 13:52:32 by zasabri          ###   ########.fr       */
+/*   Created: 2023/02/01 16:01:39 by zasabri           #+#    #+#             */
+/*   Updated: 2023/02/01 16:01:42 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-void	norm_thing_for_duplicates(int *arr, int size)
+void	if_alr_sort(t_list *head)
 {
 	int	i;
-	int	j;
-
-	i = 0;
-	while (i < size)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (arr[i] == arr[j])
-			{
-				free(arr);
-				error_generate();
-			}
-			j++;
-		}
-		i++;
-	}
-}
-
-void	if_dup(t_list *head)
-{
-	int	i;
+	int	l;
 	int	*arr;
-	int	size;
 
 	i = 0;
-	size = ft_lstsize(head);
-	arr = malloc(size * 4);
+	l = ft_lstsize(head);
+	arr = malloc(4 * l);
 	while (head)
 	{
 		arr[i] = head->content;
-		i++;
 		head = head->next;
+		i++;
 	}
-	norm_thing_for_duplicates(arr, size);
+	i = 0;
+	while (i < l - 1)
+	{
+		if (arr[i] > arr[i + 1])
+			break ;
+		i++;
+	}
 	free(arr);
+	if (i + 1 == l)
+		exit(0);
 }
