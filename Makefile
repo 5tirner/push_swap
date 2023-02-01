@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/02/01 14:46:37 by zasabri          ###   ########.fr        #
+#    Updated: 2023/02/01 15:52:18 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,7 +101,7 @@ CFLAGS	= -Wall -Wextra -Werror
 
 PROG	= push_swap
 
-PROG_BONUS = ft_checker
+PROG_BONUS = checker
 
 RM		= rm -rf
 
