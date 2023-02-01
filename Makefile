@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/01/31 13:23:14 by zasabri          ###   ########.fr        #
+#    Updated: 2023/02/01 10:39:38 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,13 +51,19 @@ SRC		= push_swap.c\
 		sort_head_in_arr.c\
 		free_str.c\
 
+SRC_BONUS = ft_checker.c\
+
 OBJS	= $(SRC:.c=.o)
+
+OBJS_BONUS	= $(SRC_BONUS:.c=.o)
 
 CC		= cc
 
 CFLAGS	= -Wall -Wextra -Werror
 
 PROG	= push_swap
+
+PROG_BONUS = push_swap_bonus
 
 RM		= rm -rf
 
@@ -66,10 +72,16 @@ all	: $(PROG)
 $(PROG)	: $(OBJS)
 
 	$(CC) $(CFLAGS) $(OBJS) -o $(PROG)
+
+bonus : $(PROG_BONUS)
+
+$(PROG_BONUS) : $(OBJS_BONUS)
+
+	$(CC) $(CFLAGS) $(OBJS_BONUS) -o $(PROG_BONUS)
 	
 clean :
 
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean : clean
 
