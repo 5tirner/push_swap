@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:09 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 16:19:01 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/02 18:10:45 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,15 @@ void	rotate_a_and_b_bonus(t_list **head, t_list **head2)
 	{
 		ptr = *head;
 		*head = (*head)->next;
-		ft_lstadd_back(head, ft_lstnew(ptr->content));
+		ft_lstadd_back(head, ptr);
+		ptr->next = NULL;
 	}
 	if (ft_lstsize(*head2) > 1)
 	{
 		ptr = *head2;
 		*head2 = (*head2)->next;
-		ft_lstadd_back(head2, ft_lstnew(ptr->content));
+		ft_lstadd_back(head2, ptr);
+		ptr->next = NULL;
 	}
 }
 
@@ -59,18 +61,18 @@ void	norm_the_rrr_bonus(t_list **head)
 	t_list	*ptr;
 	t_list	*save;
 
-	if (ft_lstsize(*head) > 1)
+	if (ft_lstsize(*head) <= 1)
+		return ;
+	if (ft_lstsize(*head) == 2)
+		swap_a_algo(head);
+	else
 	{
 		ptr = *head;
-		while (ptr->next)
+		while (ptr->next->next)
 			ptr = ptr->next;
-		save = ft_lstnew(ptr->content);
-		while ((*head)->next)
-		{
-			ft_lstadd_back(&save, ft_lstnew((*head)->content));
-			*head = (*head)->next;
-		}
-		(*head) = save;
+		save = ptr->next;
+		ptr->next = NULL;
+		ft_lstadd_front(head, save);
 	}
 }
 
