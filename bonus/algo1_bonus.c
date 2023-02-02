@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:03:38 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 16:08:23 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/02 17:52:18 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	rotate_a_algo_bonus(t_list **head)
 		return ;
 	ptr = *head;
 	*head = (*head)->next;
-	ft_lstadd_back(head, ft_lstnew(ptr->content));
+	ft_lstadd_back(head, ptr);
+	ptr->next = NULL;
 }
 
 void	rev_rotate_a_algo_bonus(t_list **head)
@@ -42,22 +43,27 @@ void	rev_rotate_a_algo_bonus(t_list **head)
 
 	if (ft_lstsize(*head) <= 1)
 		return ;
-	ptr = *head;
-	while (ptr->next)
-		ptr = ptr->next;
-	save = ft_lstnew(ptr->content);
-	while ((*head)->next)
+	if (ft_lstsize(*head) == 2)
+		swap_a_algo(head);
+	else
 	{
-		ft_lstadd_back(&save, ft_lstnew((*head)->content));
-		*head = (*head)->next;
+		ptr = *head;
+		while (ptr->next->next)
+			ptr = ptr->next;
+		save = ptr->next;
+		ptr->next = NULL;
+		ft_lstadd_front(head, save);
 	}
-	(*head) = save;
 }
 
 void	push_a_algo_bonus(t_list **head, t_list **head2)
 {
+	t_list	*ls;
+
 	if (ft_lstsize(*head2) == 0)
 		return ;
 	ft_lstadd_front(head, ft_lstnew((*head2)->content));
-	*head2 = (*head2)->next;
+	ls = (*head2)->next;
+	free(*head2);
+	*head2 = ls;
 }

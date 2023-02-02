@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:01:15 by zasabri           #+#    #+#             */
-/*   Updated: 2023/01/23 22:39:35 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/02 17:44:38 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	rotate_b_algo(t_list **head2)
 		return ;
 	ptr = *head2;
 	*head2 = (*head2)->next;
-	ft_lstadd_back(head2, ft_lstnew(ptr->content));
+	ft_lstadd_back(head2, ptr);
+	ptr->next = NULL;
 	ft_printf("rb\n");
 }
 
@@ -44,24 +45,29 @@ void	rev_rotate_b_algo(t_list **head2)
 
 	if (ft_lstsize(*head2) <= 1)
 		return ;
-	ptr = *head2;
-	while (ptr->next)
-		ptr = ptr->next;
-	save = ft_lstnew(ptr->content);
-	while ((*head2)->next)
+	if (ft_lstsize(*head2) == 2)
+		swap_a_algo(head2);
+	else
 	{
-		ft_lstadd_back(&save, ft_lstnew((*head2)->content));
-		*head2 = (*head2)->next;
+		ptr = *head2;
+		while (ptr->next->next)
+			ptr = ptr->next;
+		save = ptr->next;
+		ptr->next = NULL;
+		ft_lstadd_front(head2, save);
 	}
-	(*head2) = save;
 	ft_printf("rrb\n");
 }
 
 void	push_b_algo(t_list **head, t_list **head2)
 {
+	t_list	*ls;
+
 	if (ft_lstsize(*head) == 0)
 		return ;
 	ft_lstadd_front(head2, ft_lstnew((*head)->content));
-	*head = (*head)->next;
+	ls = (*head)->next;
+	free(*head);
+	*head = ls;
 	ft_printf("pb\n");
 }
