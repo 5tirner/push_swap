@@ -79,4 +79,4 @@ the head of the first linked list is rotated.\
 The process continues until all elements have been transferred from the first linked list to the second linked list.
 
 -> now if you go-to `hundreds` function in the same file you will find a loop, this loop it will works until the `head2` become vide.\
-it just take the big element in the `head2` and push it to a.
+it just take the big element in the `head2` and push it to head_2.
