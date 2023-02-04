@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 11:31:22 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 16:11:45 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/04 11:19:04 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "../push_swap.h"
 
 void	if_dup(t_list *head);
-void	if_alr_sort(t_list *head);
 void	checker_aplly(t_list **head, t_list **head2);
 void	swap_a_algo_bonus(t_list **head);
 void	rotate_a_algo_bonus(t_list **head);

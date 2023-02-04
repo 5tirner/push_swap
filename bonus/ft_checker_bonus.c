@@ -6,7 +6,7 @@
 /*   By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:01:46 by zasabri           #+#    #+#             */
-/*   Updated: 2023/02/01 16:58:41 by zasabri          ###   ########.fr       */
+/*   Updated: 2023/02/04 11:18:25 by zasabri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,5 @@ int	main(int ac, char **av)
 		free_str(str);
 	}
 	if_dup(head);
-	if_alr_sort(head);
 	checker_aplly(&head, &head2);
 }

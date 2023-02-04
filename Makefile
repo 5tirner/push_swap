@@ -6,7 +6,7 @@
 #    By: zasabri <zasabri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 23:45:57 by zasabri           #+#    #+#              #
-#    Updated: 2023/02/01 16:20:26 by zasabri          ###   ########.fr        #
+#    Updated: 2023/02/04 11:18:55 by zasabri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,6 @@ SRC_BONUS	= ./bonus/ft_checker_bonus.c\
 			./bonus/GNL/get_next_line.c\
 			./bonus/GNL/get_next_line_utils.c\
 			./bonus/check_dup_bonus.c\
-			./bonus/deja_msortin_bonus.c\
 			error_generate.c\
 			free_str.c\
 			./libft/ft_lstadd_back.c\
