@@ -2,7 +2,7 @@
 
 # SORT ALGORITHM
 
-This is a C program that sorts a list of numbers into ascending order by following these moves:\
+This is a C project that sorts a list of numbers into ascending order by following these moves:
 - `sa` (swap a): Swap the first 2 elements at the top of stack a.\
 Do nothing if there is only one or no elements.
 - `sb` (swap b): Swap the first 2 elements at the top of stack b.\
